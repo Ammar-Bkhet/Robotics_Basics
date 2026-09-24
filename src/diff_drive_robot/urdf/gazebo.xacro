@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ========================================================= -->
+  <!-- Gazebo material                                             -->
+  <!-- ========================================================= -->
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel_link">
+    <material>Gazebo/Black</material>
+
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <gazebo reference="right_wheel_link">
+    <material>Gazebo/Black</material>
+
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <gazebo reference="caster_sphere_link">
+    <material>Gazebo/Black</material>
+
+    <!-- Nearly frictionless: supports weight but slides freely. -->
+    <mu1>0.02</mu1>
+    <mu2>0.02</mu2>
+
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Differential Drive Plugin                                  -->
+  <!-- ========================================================= -->
+
+  <gazebo>
+
+    <plugin name="diff_drive_controller"
+            filename="libgazebo_ros_diff_drive.so">
+
+      <!-- Wheel joints -->
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+
+      <!-- Geometry -->
+      <wheel_separation>${s}</wheel_separation>
+      <wheel_diameter>${2*wheel_radius}</wheel_diameter>
+
+      <!-- Maximum velocities -->
+      <max_wheel_torque>10.0</max_wheel_torque>
+      <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+      <!-- Topics -->
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+
+      <!-- Frames -->
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+
+      <!-- Publish -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+
+      <!-- Update rate -->
+      <update_rate>50</update_rate>
+
+    </plugin>
+
+  </gazebo>
+
+</robot>
