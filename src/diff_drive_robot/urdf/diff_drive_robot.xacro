@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="diff_drive_robot">
+
+  <!-- ========================================================= -->
+  <!-- Parameters                                                 -->
+  <!-- ========================================================= -->
+
+  <!-- Robot body -->
+  <xacro:property name="body_length" value="0.60"/>
+  <xacro:property name="body_width"  value="0.30"/>
+  <xacro:property name="body_height" value="0.20"/>
+
+  <!-- Differential-drive geometry -->
+  <!-- s = distance between left and right wheel centers -->
+  <xacro:property name="s" value="0.40"/>
+
+  <!-- Wheels -->
+  <xacro:property name="wheel_radius" value="0.10"/>
+  <xacro:property name="wheel_width"  value="0.05"/>
+
+  <!-- Masses -->
+  <xacro:property name="body_mass"  value="5.0"/>
+  <xacro:property name="wheel_mass" value="0.5"/>
+
+
+  <!-- ========================================================= -->
+  <!-- Base Link                                                   -->
+  <!-- ========================================================= -->
+
+  <link name="base_link">
+
+    <visual>
+      <!-- Put the bottom of the body at z = 0 -->
+      <origin xyz="0 0 ${body_height/2}" rpy="0 0 0"/>
+
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 ${body_height/2}" rpy="0 0 0"/>
+
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 ${body_height/2}" rpy="0 0 0"/>
+
+      <mass value="${body_mass}"/>
+
+      <!-- Box inertia -->
+      <inertia
+        ixx="${body_mass * (body_width*body_width + body_height*body_height) / 12}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${body_mass * (body_length*body_length + body_height*body_height) / 12}"
+        iyz="0.0"
+        izz="${body_mass * (body_length*body_length + body_width*body_width) / 12}"/>
+    </inertial>
+
+  </link>
+
+
+  <!-- ========================================================= -->
+  <!-- Left Wheel                                                  -->
+  <!-- ========================================================= -->
+
+  <link name="left_wheel_link">
+
+    <visual>
+      <!-- Cylinder axis is normally Z.
+           Rotate it so the wheel axle is along Y. -->
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_width}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_width}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+
+      <mass value="${wheel_mass}"/>
+
+      <!-- Solid cylinder whose axis is Y -->
+      <inertia
+        ixx="${wheel_mass * (3*wheel_radius*wheel_radius + wheel_width*wheel_width) / 12}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${wheel_mass * wheel_radius*wheel_radius / 2}"
+        iyz="0.0"
+        izz="${wheel_mass * (3*wheel_radius*wheel_radius + wheel_width*wheel_width) / 12}"/>
+    </inertial>
+
+  </link>
+
+
+  <!-- ========================================================= -->
+  <!-- Right Wheel                                                 -->
+  <!-- ========================================================= -->
+
+  <link name="right_wheel_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_width}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_width}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+
+      <mass value="${wheel_mass}"/>
+
+      <inertia
+        ixx="${wheel_mass * (3*wheel_radius*wheel_radius + wheel_width*wheel_width) / 12}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${wheel_mass * wheel_radius*wheel_radius / 2}"
+        iyz="0.0"
+        izz="${wheel_mass * (3*wheel_radius*wheel_radius + wheel_width*wheel_width) / 12}"/>
+    </inertial>
+
+  </link>
+
+
+  <!-- ========================================================= -->
+  <!-- Left Wheel Joint                                            -->
+  <!-- ========================================================= -->
+
+  <joint name="left_wheel_joint"
+         type="continuous">
+
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+
+    <!-- Wheel center -->
+    <origin xyz="0 ${s/2} ${wheel_radius}"
+            rpy="0 0 0"/>
+
+    <!-- Wheel rotates around Y -->
+    <axis xyz="0 1 0"/>
+
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Right Wheel Joint                                           -->
+  <!-- ========================================================= -->
+
+  <joint name="right_wheel_joint"
+         type="continuous">
+
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+
+    <!-- Wheel center -->
+    <origin xyz="0 -${s/2} ${wheel_radius}"
+            rpy="0 0 0"/>
+
+    <!-- Wheel rotates around Y -->
+    <axis xyz="0 1 0"/>
+
+  </joint>
+
+  <xacro:include filename="$(find diff_drive_robot)/urdf/gazebo.xacro"/>
+
+</robot>
