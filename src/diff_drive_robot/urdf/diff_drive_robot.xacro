@@ -20,6 +20,15 @@
   <xacro:property name="wheel_radius" value="0.10"/>
   <xacro:property name="wheel_width"  value="0.05"/>
 
+  <!-- Low-friction fixed front support sphere -->
+  <xacro:property name="caster_sphere_radius" value="0.05"/>
+  <xacro:property name="caster_sphere_mass" value="0.20"/>
+  <xacro:property name="caster_sphere_x"
+                  value="0.22"/>
+  <!-- Sphere bottom matches the drive wheels' contact height. -->
+  <xacro:property name="caster_sphere_z"
+                  value="${wheel_radius / 2 - caster_sphere_radius}"/>
+
   <!-- Masses -->
   <xacro:property name="body_mass"  value="5.0"/>
   <xacro:property name="wheel_mass" value="0.5"/>
@@ -150,6 +159,35 @@
 
   </link>
 
+  <!-- ========================================================= -->
+  <!-- Fixed Low-Friction Front Sphere                           -->
+  <!-- ========================================================= -->
+
+  <link name="caster_sphere_link">
+    <visual>
+      <geometry>
+        <sphere radius="${caster_sphere_radius}"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="${caster_sphere_radius}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="${caster_sphere_mass}"/>
+      <inertia
+        ixx="${2 * caster_sphere_mass * caster_sphere_radius *
+               caster_sphere_radius / 5}"
+        ixy="0.0" ixz="0.0"
+        iyy="${2 * caster_sphere_mass * caster_sphere_radius *
+               caster_sphere_radius / 5}"
+        iyz="0.0"
+        izz="${2 * caster_sphere_mass * caster_sphere_radius *
+               caster_sphere_radius / 5}"/>
+    </inertial>
+  </link>
+
 
   <!-- ========================================================= -->
   <!-- Left Wheel Joint                                            -->
@@ -162,7 +200,7 @@
     <child link="left_wheel_link"/>
 
     <!-- Wheel center -->
-    <origin xyz="0 ${s/2} ${wheel_radius/2}"
+    <origin xyz="0.1 ${s/2} ${wheel_radius/2}"
             rpy="0 0 0"/>
 
     <!-- Wheel rotates around Y -->
@@ -182,12 +220,18 @@
     <child link="right_wheel_link"/>
 
     <!-- Wheel center -->
-    <origin xyz="0 -${s/2} ${wheel_radius/2}"
+    <origin xyz="0.1 -${s/2} ${wheel_radius/2}"
             rpy="0 0 0"/>
 
     <!-- Wheel rotates around Y -->
     <axis xyz="0 1 0"/>
 
+  </joint>
+
+  <joint name="caster_sphere_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_sphere_link"/>
+    <origin xyz="-${caster_sphere_x} 0 ${caster_sphere_z}" rpy="0 0 0"/>
   </joint>
 
   <xacro:include filename="$(find diff_drive_robot)/urdf/gazebo.xacro"/>
