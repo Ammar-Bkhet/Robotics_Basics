@@ -162,7 +162,7 @@
     <child link="left_wheel_link"/>
 
     <!-- Wheel center -->
-    <origin xyz="0 ${s/2} ${wheel_radius}"
+    <origin xyz="0 ${s/2} ${wheel_radius/2}"
             rpy="0 0 0"/>
 
     <!-- Wheel rotates around Y -->
@@ -182,7 +182,7 @@
     <child link="right_wheel_link"/>
 
     <!-- Wheel center -->
-    <origin xyz="0 -${s/2} ${wheel_radius}"
+    <origin xyz="0 -${s/2} ${wheel_radius/2}"
             rpy="0 0 0"/>
 
     <!-- Wheel rotates around Y -->
