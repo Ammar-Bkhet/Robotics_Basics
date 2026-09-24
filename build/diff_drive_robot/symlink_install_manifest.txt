@@ -1,3 +1,4 @@
+/home/ammar/Robotics_Basics/install/diff_drive_robot/lib/diff_drive_robot/kinematic_model.py
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo.launch.cpython-310.pyc
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo_paused.launch.cpython-310.pyc
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/display.launch.py
@@ -5,6 +6,7 @@
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/gazebo_paused.launch.py
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/diff_drive_robot.xacro
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/gazebo.xacro
+/home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/src/kinematic_model.py
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/package_run_dependencies/diff_drive_robot
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/parent_prefix_path/diff_drive_robot
 /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/ament_prefix_path.sh

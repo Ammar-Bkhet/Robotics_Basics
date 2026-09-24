@@ -1,0 +1,36 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ammar/Robotics_Basics/build/diff_drive_robot
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/lib/diff_drive_robot/kinematic_model.py
+-- Symlinking: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo.launch.cpython-310.pyc
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo_paused.launch.cpython-310.pyc
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/display.launch.py
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/gazebo.launch.py
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/gazebo_paused.launch.py
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/diff_drive_robot.xacro
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/gazebo.xacro
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/src/kinematic_model.py
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/package_run_dependencies/diff_drive_robot
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/parent_prefix_path/diff_drive_robot
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/path.sh
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/path.dsv
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.bash
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.sh
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.zsh
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.dsv
+-- Symlinking: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/package.dsv
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/packages/diff_drive_robot
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/cmake/diff_drive_robotConfig.cmake
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/cmake/diff_drive_robotConfig-version.cmake
+-- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/package.xml

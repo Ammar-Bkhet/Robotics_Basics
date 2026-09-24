@@ -1,0 +1,28 @@
+[0.025s] Invoking command in '/home/ammar/Robotics_Basics/build/diff_drive_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ammar/ws_moveit2/install/moveit_configs_utils:/home/ammar/ws_moveit2/install/launch_param_builder:/home/ammar/ros2_ws/install/test_serial:/home/ammar/turtlebot3_localization/install/kalman_filter:/home/ammar/f110_labs_ws/install/autodrive_nigel:/home/ammar/f110_labs_ws/install/autodrive_f1tenth:/home/ammar/sim_ws/install/f1tenth_gym_ros:/home/ammar/arduinobot_ws/install/arduinobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics_Basics/build/diff_drive_robot -- -j12 -l12
+[0.083s] Invoked command in '/home/ammar/Robotics_Basics/build/diff_drive_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ammar/ws_moveit2/install/moveit_configs_utils:/home/ammar/ws_moveit2/install/launch_param_builder:/home/ammar/ros2_ws/install/test_serial:/home/ammar/turtlebot3_localization/install/kalman_filter:/home/ammar/f110_labs_ws/install/autodrive_nigel:/home/ammar/f110_labs_ws/install/autodrive_f1tenth:/home/ammar/sim_ws/install/f1tenth_gym_ros:/home/ammar/arduinobot_ws/install/arduinobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics_Basics/build/diff_drive_robot -- -j12 -l12
+[0.099s] Invoking command in '/home/ammar/Robotics_Basics/build/diff_drive_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ammar/ws_moveit2/install/moveit_configs_utils:/home/ammar/ws_moveit2/install/launch_param_builder:/home/ammar/ros2_ws/install/test_serial:/home/ammar/turtlebot3_localization/install/kalman_filter:/home/ammar/f110_labs_ws/install/autodrive_nigel:/home/ammar/f110_labs_ws/install/autodrive_f1tenth:/home/ammar/sim_ws/install/f1tenth_gym_ros:/home/ammar/arduinobot_ws/install/arduinobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics_Basics/build/diff_drive_robot
+[0.112s] -- Install configuration: ""
+[0.113s] -- Execute custom install script
+[0.113s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo.launch.cpython-310.pyc
+[0.113s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/__pycache__/gazebo_paused.launch.cpython-310.pyc
+[0.114s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/display.launch.py
+[0.114s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/gazebo.launch.py
+[0.114s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/launch/gazebo_paused.launch.py
+[0.114s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/diff_drive_robot.xacro
+[0.114s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/urdf/gazebo.xacro
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/package_run_dependencies/diff_drive_robot
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/parent_prefix_path/diff_drive_robot
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/ament_prefix_path.sh
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/ament_prefix_path.dsv
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/path.sh
+[0.115s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/environment/path.dsv
+[0.116s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.bash
+[0.116s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.sh
+[0.116s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.zsh
+[0.116s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/local_setup.dsv
+[0.116s] -- Symlinking: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/package.dsv
+[0.130s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/ament_index/resource_index/packages/diff_drive_robot
+[0.131s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/cmake/diff_drive_robotConfig.cmake
+[0.131s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/cmake/diff_drive_robotConfig-version.cmake
+[0.131s] -- Up-to-date symlink: /home/ammar/Robotics_Basics/install/diff_drive_robot/share/diff_drive_robot/package.xml
+[0.133s] Invoked command in '/home/ammar/Robotics_Basics/build/diff_drive_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ammar/ws_moveit2/install/moveit_configs_utils:/home/ammar/ws_moveit2/install/launch_param_builder:/home/ammar/ros2_ws/install/test_serial:/home/ammar/turtlebot3_localization/install/kalman_filter:/home/ammar/f110_labs_ws/install/autodrive_nigel:/home/ammar/f110_labs_ws/install/autodrive_f1tenth:/home/ammar/sim_ws/install/f1tenth_gym_ros:/home/ammar/arduinobot_ws/install/arduinobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics_Basics/build/diff_drive_robot

@@ -315,8 +315,11 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "launch" "urdf" "worlds" "DESTINATION" "share/diff_drive_robot")
-ament_cmake_symlink_install_directory("/home/ammar/Robotics_Basics/src/diff_drive_robot" DIRECTORY "launch" "urdf" "worlds" "DESTINATION" "share/diff_drive_robot")
+# install(PROGRAMS "src/kinematic_model.py" "DESTINATION" "lib/diff_drive_robot")
+ament_cmake_symlink_install_programs("/home/ammar/Robotics_Basics/src/diff_drive_robot" PROGRAMS "src/kinematic_model.py" "DESTINATION" "lib/diff_drive_robot")
+
+# install(DIRECTORY "launch" "urdf" "worlds" "src" "DESTINATION" "share/diff_drive_robot")
+ament_cmake_symlink_install_directory("/home/ammar/Robotics_Basics/src/diff_drive_robot" DIRECTORY "launch" "urdf" "worlds" "src" "DESTINATION" "share/diff_drive_robot")
 
 # install(FILES "/home/ammar/Robotics_Basics/build/diff_drive_robot/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/diff_drive_robot" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/ammar/Robotics_Basics/src/diff_drive_robot" FILES "/home/ammar/Robotics_Basics/build/diff_drive_robot/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/diff_drive_robot" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

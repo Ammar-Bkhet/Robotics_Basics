@@ -11,11 +11,19 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+
+install(
+  PROGRAMS
+    src/kinematic_model.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(
   DIRECTORY
     launch
     urdf
     worlds
+    src
   DESTINATION share/${PROJECT_NAME}
 )
 
