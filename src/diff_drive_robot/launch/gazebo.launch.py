@@ -64,7 +64,7 @@ def generate_launch_description():
             "-entity",
             "diff_drive_robot",
             "-z",
-            "10"
+            "0.5"
         ],
         output="screen"
     )
