@@ -1,1 +1,0 @@
-/home/ammar/Robotics_Basics/build/diff_drive_robot/ament_cmake_core/diff_drive_robotConfig.cmake
