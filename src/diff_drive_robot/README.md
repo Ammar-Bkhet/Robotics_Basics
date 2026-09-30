@@ -12,10 +12,9 @@ effect of simulation dynamics on an otherwise identical trajectory.
 | Gazebo simulation | `/odom` | The robot simulated with mass, inertia, contact, friction, and the Gazebo differential-drive plugin. |
 | Kinematic model | `/kinematic_odom` | An ideal planar differential-drive model integrated from the commanded linear and angular velocity. |
 
-The controller in `src/position_control.py` publishes the command on
-`/cmd_vel`. Gazebo consumes that command directly, and
-`src/kinematic_model.py` subscribes to the same topic. This keeps the input
-to both models consistent.
+You publish the command on `/cmd_vel` from a terminal. Gazebo consumes that
+command directly, and `src/kinematic_model.py` subscribes to the same topic.
+This keeps the input to both models consistent.
 
 ## 1. Build the robot with Xacro
 
@@ -75,15 +74,6 @@ as `nav_msgs/Odometry` on `/kinematic_odom`. It has no mass, slip, contact,
 or motor dynamics: it assumes the commanded `v` and `omega` are achieved
 immediately.
 
-`src/position_control.py` generates `/cmd_vel` from the distance and heading
-error to a target position. Its default target is `(2.0, 2.0)`, with gains
-`k_v = 0.2` and `k_omega = 1.5`. Adjust the target at launch if needed:
-
-```bash
-ros2 run diff_drive_robot position_control.py --ros-args \
-  -p x_d:=2.0 -p y_d:=2.0
-```
-
 ## 4. Build and run the experiment
 
 In a terminal, build the workspace and start Gazebo:
@@ -104,9 +94,13 @@ ros2 run diff_drive_robot kinematic_model.py
 ```
 
 ```bash
-# Terminal 3: position controller and common velocity command
-ros2 run diff_drive_robot position_control.py
+# Terminal 3: publish the common velocity command
+ros2 topic pub /cmd_vel geometry_msgs/msg/Twist \
+  "{linear: {x: 0.2}, angular: {z: 0.5}}"
 ```
+
+This command publishes a linear velocity of `0.2 m/s` and an angular velocity
+of `0.5 rad/s`. Both models receive it through `/cmd_vel`.
 
 ## 5. Compare the topics in PlotJuggler
 

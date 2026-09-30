@@ -14,7 +14,7 @@
 
   <!-- Differential-drive geometry -->
   <!-- s = distance between left and right wheel centers -->
-  <xacro:property name="s" value="0.40"/>
+  <xacro:property name="s" value="0.4"/>
 
   <!-- Wheels -->
   <xacro:property name="wheel_radius" value="0.10"/>
@@ -50,7 +50,7 @@
     </visual>
 
     <collision>
-      <origin xyz="0 0 ${body_height/2}" rpy="0 0 0"/>
+      <origin xyz="-0.1 0 ${body_height/2}" rpy="0 0 0"/>
 
       <geometry>
         <box size="${body_length} ${body_width} ${body_height}"/>
@@ -58,7 +58,7 @@
     </collision>
 
     <inertial>
-      <origin xyz="0 0 ${body_height/2}" rpy="0 0 0"/>
+      <origin xyz="-0.1 0 ${body_height/2}" rpy="0 0 0"/>
 
       <mass value="${body_mass}"/>
 

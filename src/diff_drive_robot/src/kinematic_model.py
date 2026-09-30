@@ -40,7 +40,7 @@ class KinematicModel(Node):
 
         # Run the kinematic model at 50 Hz
         self.timer = self.create_timer(
-            0.01,
+            0.02,
             self.update
         )
 
@@ -55,7 +55,7 @@ class KinematicModel(Node):
 
     def update(self):
 
-        dt = 0.01
+        dt = 0.02
 
         # Differential-drive kinematic model
         x_dot = self.v * math.cos(self.theta)

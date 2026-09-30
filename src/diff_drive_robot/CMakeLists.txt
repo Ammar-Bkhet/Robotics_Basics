@@ -15,6 +15,7 @@ find_package(ament_cmake REQUIRED)
 install(
   PROGRAMS
     src/kinematic_model.py
+    src/position_control.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
