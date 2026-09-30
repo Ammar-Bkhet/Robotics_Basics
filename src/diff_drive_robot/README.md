@@ -137,10 +137,7 @@ effect because it applies the requested angular velocity directly.
 
 ## PlotJuggler recording
 
-Add the recording to `media/plotjuggler_gazebo_vs_kinematic.mp4`, then update
-the link below if the filename changes:
-
-[Watch the PlotJuggler comparison recording](media/plotjuggler_gazebo_vs_kinematic.mp4)
+[![PlotJuggler: Gazebo vs kinematic model](media/plotjuggler_comparison.png)](media/plotjuggler_gazebo_vs_kinematic.webm)
 
 The recording should show the X/Y position comparison and the angular
 velocity plot together, making the connection between angular-velocity
